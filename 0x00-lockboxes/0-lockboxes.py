@@ -13,11 +13,11 @@ def canUnlockAll(boxes):
         True if all boxes can be opened, else return False.
     """
     keys = {0}
-    for box in range(0, len(boxes) - 1):
+    for box in range(0, len(boxes)):
         if box in keys:
             keys.update(boxes[box])
             for key in boxes[box]:
-                if key < len(boxes) - 1:
+                if key < len(boxes):
                     keys.update(boxes[key])
         else:
             return False
