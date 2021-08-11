@@ -24,7 +24,7 @@ def minOperations(n):
     ops = 2
 
     while printed_chars < n:
-        if n % pasted_chars == 0:
+        if n % printed_chars == 0:
             copied_chars = printed_chars
             ops += 1
         printed_chars += copied_chars
