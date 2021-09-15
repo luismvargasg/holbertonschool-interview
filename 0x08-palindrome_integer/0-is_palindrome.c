@@ -12,7 +12,7 @@
 
 int is_palindrome(unsigned long n)
 {
-	unsigned long q = n, rem, result;
+	unsigned long q = n, rem = 0, result = 0;
 
 	while (q != 0)
 	{
