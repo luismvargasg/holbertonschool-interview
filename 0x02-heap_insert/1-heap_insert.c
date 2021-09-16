@@ -6,9 +6,11 @@
  * @value: The value store in the node to be inserted
  * Return: A tree with max heap ordering
  */
+
 heap_t *heap_insert(heap_t **root, int value)
 {
 	heap_t *node, *parent;
+
 	if (*root == NULL)
 	{
 		node = binary_tree_node(*root, value);
