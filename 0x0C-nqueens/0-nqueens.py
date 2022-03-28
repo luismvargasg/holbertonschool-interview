@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
 N queens puzzle is the challenge of placing N non-attacking queens on an
-NxN chessboard. Write a program that solves the N queens problem.
+NxN chessboard. This is a program that solves the N queens problem.
 """
 import sys
 
@@ -10,7 +10,7 @@ def printSolution(board):
     """print the coordinates row and column for the position of
        each N queen in the posible solution
     Arg:
-       - board: matrix[n][n], list of list
+       - board: matrix[n][n], list of list.
     """
     solution = []
     for i in range(len(board)):
