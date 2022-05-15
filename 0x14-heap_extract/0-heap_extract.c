@@ -14,7 +14,7 @@ int heap_size(heap_t *heap)
  * heap_restore - Restores heap property from root.
  * @heap: Pointer to heap struct.
  */
-void heapify_down(heap_t *heap)
+void heap_restore(heap_t *heap)
 {
 	heap_t *node = heap, *child;
 	int temp;
@@ -39,7 +39,7 @@ void heapify_down(heap_t *heap)
 
 /**
  * heap_extract - Function that extracts the root node of a Max Binary Heap.
- * @root: Double pointer to the root node of the heap.
+ * @heap: pointer to heap struct
  * Return: The value stored in the root node.
  **/
 int heap_extract(heap_t **heap)
@@ -69,7 +69,7 @@ int heap_extract(heap_t **heap)
 	else
 		node->parent->right = NULL;
 	free(node);
-	heapify_down(root);
+	heap_restore(root);
 	*heap = root;
 	return (n);
 }
