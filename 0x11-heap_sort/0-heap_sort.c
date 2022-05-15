@@ -3,8 +3,8 @@
 void heapify(int *array, size_t size, long int i, long int s);
 
 /**
- * heap_sort - sorts an array of integers in ascending order
- * using the sift-down Heap sort algorithm
+ * heap_sort - Function that sorts an array of integers in ascending order
+ * using the "sift-down" Heap sort algorithm.
  * @array: Array to be sorted
  * @size: Size of Array
  */

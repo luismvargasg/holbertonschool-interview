@@ -1,12 +1,12 @@
-# 0x14. Heap Extract
+# 0x13. Count it!
 
-> This directory contains all the tasks of the project "0x14. Heap Extract" at [Holberton School](https://www.holbertonschool.com 'Holberton School.') for educational purpose.
+> This directory contains all the tasks of the project "0x13. Count it!" at [Holberton School](https://www.holbertonschool.com 'Holberton School.') for educational purpose.
 
 [![Luis Miguel Vargas](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2Fluismvargasg1)](https://twitter.com/luismvargasg1)
 
 ## Table of Contents
 
-- [0x14. Heap Extract](#0x14-heap-extract)
+- [0x13. Count it!](#0x13-count-it)
   - [Table of Contents](#table-of-contents)
   - [Author](#author)
   - [License](#license)
