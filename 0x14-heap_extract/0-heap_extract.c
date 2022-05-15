@@ -1,44 +1,75 @@
 #include "binary_trees.h"
 
 /**
+ * heap_size - Gets the size of heap
+ * @heap: Pointer to root
+ * Return: Size of heap
+ */
+int heap_size(heap_t *heap)
+{
+	return (heap ? 1 + heap_size(heap->left) + heap_size(heap->right) : 0);
+}
+
+/**
+ * heap_restore - Restores heap property from root.
+ * @heap: Pointer to heap struct.
+ */
+void heapify_down(heap_t *heap)
+{
+	heap_t *node = heap, *child;
+	int temp;
+
+	while (1)
+	{
+		if (!node->left)
+			break;
+		if (!node->right)
+			child = node->left;
+		else
+			child = node->left->n > node->right->n ?
+				node->left : node->right;
+		if (node->n > child->n)
+			break;
+		temp = node->n;
+		node->n = child->n;
+		child->n = temp;
+		node = child;
+	}
+}
+
+/**
  * heap_extract - Function that extracts the root node of a Max Binary Heap.
  * @root: Double pointer to the root node of the heap.
  * Return: The value stored in the root node.
  **/
-int heap_extract(heap_t **root)
+int heap_extract(heap_t **heap)
 {
-	int value, value_aux;
-	heap_t *aux;
+	int n, size, bit;
+	heap_t *node, *root;
 
-	if (!root || !*root)
+	if (!heap || !*heap)
 		return (0);
-	aux = *root;
-	value = aux->n;
-	if (!aux->left && !aux->right && !aux->parent)
+	root = *heap;
+	n = root->n;
+	size = heap_size(root);
+	if (size == 1)
 	{
-		free(aux);
-		return (value);
+		free(root);
+		*heap = NULL;
+		return (n);
 	}
-	while (aux->left || aux->right)
-	{
-		if (aux->left && aux->right)
-		{
-			if (!aux->right || aux->left->n > aux->right->n)
-			{
-				value_aux = aux->n;
-				aux->n = aux->left->n;
-				aux->left->n = value_aux;
-				aux = aux->left;
-			}
-			else if (aux->left->n < aux->right->n)
-			{
-				value_aux = aux->n;
-				aux->n = aux->right->n;
-				aux->right->n = value_aux;
-				aux = aux->right;
-
-			}
-		}
-	}
-	return (value);
+	for (bit = 1; bit <= size; bit <<= 1)
+		;
+	bit >>= 2;
+	for (node = root; bit > 0; bit >>= 1)
+		node = size & bit ? node->right : node->left;
+	root->n = node->n;
+	if (node->parent->left == node)
+		node->parent->left = NULL;
+	else
+		node->parent->right = NULL;
+	free(node);
+	heapify_down(root);
+	*heap = root;
+	return (n);
 }
