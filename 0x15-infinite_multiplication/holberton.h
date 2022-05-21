@@ -1,14 +1,13 @@
-#ifndef HOLBERTON_H
-#define HOLBERTON_H
+#ifndef MUL_H
+#define MUL_H
 
-#include<stdio.h>
+#include <stdio.h>
 #include <stdlib.h>
-#include <unistd.h>
 
-int main(int argc, char *argv[]);
 int _putchar(char c);
-int _strlen(char *);
-int is_digit(char *c);
-void multiply(char *s1, char *s2);
+int check_datatype(char *string);
+char *_malloc(int len);
+char *multiply(char *n1, char *n2, int n1_length, int n2_length);
+void _print(char *string);
 
-#endif /* HOLBERTON_H */
+#endif /* MUL_H */
