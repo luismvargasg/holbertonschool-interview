@@ -18,7 +18,6 @@ def makeChange(coins, total):
     if total <= 0:
         return 0
 
-    change = 0
     coins.sort(reverse=True)
     for coin in coins:
         temp_change = int(total / coin)
