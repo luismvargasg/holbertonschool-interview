@@ -3,7 +3,7 @@
 /**
  * regex_match - Function that checks whether a given pattern matches
  * a given string.
- * 
+ *
  * @str: is the string to scan.
  * @pattern: is the regluar expression.
  *
